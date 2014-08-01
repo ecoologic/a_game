@@ -1,6 +1,6 @@
 class Game < Gosu::Window
-  def initialize
-    super(640, 480, false)
+  def initialize(width=800, height=600, fullscreen=false)
+    super
     self.caption = "Gosu Tutorial Game"
 
     @background_image = Gosu::Image.new(self, "media/Space.png", true)
@@ -10,16 +10,9 @@ class Game < Gosu::Window
   end
 
   def update
-    if button_down?(Gosu::KbLeft) || button_down?(Gosu::GpLeft)
-      @player.turn_left
-    end
-    if button_down?(Gosu::KbRight) || button_down?(Gosu::GpRight)
-      @player.turn_right
-    end
-    if button_down?(Gosu::KbUp) || button_down?(Gosu::GpButton0)
-      @player.accelerate
-    end
-
+    @player.turn_left  if left?
+    @player.turn_right if right?
+    @player.accelerate if up?
     @player.move
   end
 
@@ -30,5 +23,18 @@ class Game < Gosu::Window
 
   def button_down(id)
     close if id == Gosu::KbEscape
+  end
+
+  private
+  def left?
+    button_down?(Gosu::KbLeft) || button_down?(Gosu::GpLeft)
+  end
+
+  def right?
+    button_down?(Gosu::KbRight) || button_down?(Gosu::GpRight)
+  end
+
+  def up?
+    button_down?(Gosu::KbUp) || button_down?(Gosu::GpButton0)
   end
 end
