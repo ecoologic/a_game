@@ -1,16 +1,16 @@
-class Game < Gosu::Window
+class Game < G::Window
   def initialize(width=640, height=480, fullscreen=false)
     super
-    self.caption = "Gosu Tutorial Game"
+    self.caption = "G Tutorial Game"
 
-    @background_image = Gosu::Image.new(self, "media/Space.png", true)
+    @background_image = G::Image.new(self, "media/Space.png", true)
 
     @player = Player.new(self)
     @player.warp(320, 240)
 
 
-    @star_anim = Gosu::Image::load_tiles(self, "media/Star.png", 25, 25, false)
-    @stars = Array.new
+    @star_anim = G::Image::load_tiles(self, "media/Star.png", 25, 25, false)
+    @stars = []
   end
 
   def update
@@ -32,19 +32,19 @@ class Game < Gosu::Window
   end
 
   def button_down(id)
-    close if id == Gosu::KbEscape
+    close if id == G::KbEscape
   end
 
   private
   def left?
-    button_down?(Gosu::KbLeft) || button_down?(Gosu::GpLeft)
+    button_down?(G::KbLeft) || button_down?(G::GpLeft)
   end
 
   def right?
-    button_down?(Gosu::KbRight) || button_down?(Gosu::GpRight)
+    button_down?(G::KbRight) || button_down?(G::GpRight)
   end
 
   def up?
-    button_down?(Gosu::KbUp) || button_down?(Gosu::GpButton0)
+    button_down?(G::KbUp) || button_down?(G::GpButton0)
   end
 end

@@ -1,7 +1,7 @@
 class Spaceship
   def initialize(window)
     @window = window
-    @image = Gosu::Image.new(@window, "media/Starfighter.bmp", false)
+    @image = G::Image.new(@window, "media/Starfighter.bmp", false)
     @x = @y = @vel_x = @vel_y = @angle = 0.0
     @score = 0
   end
@@ -19,8 +19,8 @@ class Spaceship
   end
 
   def accelerate
-    @vel_x += Gosu::offset_x(@angle, 0.5)
-    @vel_y += Gosu::offset_y(@angle, 0.5)
+    @vel_x += G::offset_x(@angle, 0.5)
+    @vel_y += G::offset_y(@angle, 0.5)
   end
 
   def move

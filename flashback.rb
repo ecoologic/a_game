@@ -2,4 +2,4 @@
 
 require_relative 'initialize'
 
-Game.new.show
+$w.show
