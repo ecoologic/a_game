@@ -1,13 +1,9 @@
-class Spaceship
-  def initialize(window)
-    @window = window
-    @image = G::Image.new(@window, "media/Starfighter.bmp", false)
-    @x = @y = @vel_x = @vel_y = @angle = 0.0
+class Spaceship < Element
+  def initialize(window:, position:)
+    @image = G::Image.new(window, "media/Starfighter.bmp", false)
+    @vel_x = @vel_y = @angle = 0.0
+    @x, @y = position
     @score = 0
-  end
-
-  def warp(x, y)
-    @x, @y = x, y
   end
 
   def turn_left
@@ -26,8 +22,8 @@ class Spaceship
   def move
     @x += @vel_x
     @y += @vel_y
-    @x %= @window.width
-    @y %= @window.height
+    @x %= Game.instance.width
+    @y %= Game.instance.height
 
     @vel_x *= 0.95
     @vel_y *= 0.95
