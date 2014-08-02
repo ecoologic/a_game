@@ -12,7 +12,7 @@ class CollisionDetector
         moving_element.x, moving_element.y,
         element.x, element.y
       ) < 35
-    end.to_a
-    moving_element.collide_with(close_elements)
+    end
+    moving_element.collide if close_elements
   end
 end
