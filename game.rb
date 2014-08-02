@@ -17,7 +17,7 @@ class Game < Window
     @space.draw
     @player.draw
     @stars.each(&:draw)
-    @ui.draw_score(@player.score)
+    @ui.draw_status(score: @player.score)
   end
 
   private

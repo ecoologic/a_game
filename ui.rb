@@ -8,10 +8,18 @@ class Ui
   )
 
   def initialize
+    @start_time = Time.now
   end
 
-  def draw_score(score)
-    @font.draw("Score: #{score}",
+  def draw_status(score:)
+    draw("Score: #{score} | Time: #{'%.2f' % time_lapse}")
+  end
+
+  def time_lapse
+    Time.now - @start_time
+  end
+
+  private
   def draw(message)
     FONT.draw(message,
       10,
