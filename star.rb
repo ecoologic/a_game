@@ -1,12 +1,13 @@
 class Star < Element
+  ANIMATION = G::Image::load_tiles(Game.instance, "media/Star.png", 25, 25, false)
+
   def initialize
-    @animation = G::Image::load_tiles(Game.instance, "media/Star.png", 25, 25, false)
-    @color     = random_color
-    @x, @y     = random_warp
+    @color = random_color
+    @x, @y = random_warp
   end
 
   def draw  
-    image = @animation[G::milliseconds / 100 % @animation.size]
+    image = ANIMATION[G::milliseconds / 100 % ANIMATION.size]
     image.draw(
       @x - image.width / 2.0,
       @y - image.height / 2.0,

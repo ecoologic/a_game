@@ -2,4 +2,5 @@
 
 require_relative 'initialize'
 
+Game.instance.prepare
 Game.instance.show

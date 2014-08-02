@@ -1,6 +1,7 @@
 class Spaceship < Element
-  def initialize(window:, position:)
-    @image = G::Image.new(window, "media/Starfighter.bmp", false)
+  IMAGE = G::Image.new(Game.instance, "media/Starfighter.bmp", false)
+
+  def initialize(position:)
     @vel_x = @vel_y = @angle = 0.0
     @x, @y = position
     @score = 0
@@ -30,6 +31,6 @@ class Spaceship < Element
   end
 
   def draw
-    @image.draw_rot(@x, @y, 1, @angle)
+    IMAGE.draw_rot(@x, @y, 1, @angle)
   end
 end
