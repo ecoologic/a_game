@@ -1,7 +1,7 @@
 class Window < G::Window
   def initialize
-    super(*Settings.game[:params])
-    self.caption = Settings.game[:caption]
+    super(*Settings.window[:params])
+    self.caption = Settings.window[:caption]
   end
 
   def button_down(id)

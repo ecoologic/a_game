@@ -1,8 +1,9 @@
 module Settings
-  def self.game
+  def self.window
     {
-      params:  [800, 600, false], # width, height, fullscreen
-      caption: "~Flash Back~"
+      caption:   "~Flash Back~",
+      params:    [800, 600, false], # width, height, fullscreen
+      font_size: 20
     }
   end
 end

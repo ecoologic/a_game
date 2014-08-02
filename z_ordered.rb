@@ -1,14 +1,16 @@
 module ZOrdered
-  def self.included(base)
+  def self.z_order
     # background
-    order = %w(
+    %w(
       Space
       Star
       Player
       UI
     )
     # foreground
+  end
 
-    base.send(:const_set, 'Z_ORDER', order.index(base.name))
+  def self.included(base)
+    base.send(:const_set, 'Z_ORDER', z_order.index(base.name))
   end
 end
