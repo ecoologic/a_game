@@ -5,6 +5,7 @@ class Game < Window
     @space  = Space.new
     @player = Player.new(position: center)
     @stars  = []
+    @ui     = Ui.new
   end
 
   def update
@@ -16,6 +17,7 @@ class Game < Window
     @space.draw
     @player.draw
     @stars.each(&:draw)
+    @ui.draw_score(@player.score)
   end
 
   private

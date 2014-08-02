@@ -8,6 +8,7 @@ require_relative 'settings'
 require_relative 'z_ordered'
 require_relative 'window'
 require_relative 'game'
+require_relative 'ui'
 require_relative 'collision_detector'
 
 require_relative 'space'

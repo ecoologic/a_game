@@ -5,7 +5,7 @@ module ZOrdered
       Space
       Star
       Player
-      UI
+      Ui
     )
     # foreground
   end
