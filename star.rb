@@ -1,4 +1,6 @@
 class Star < Element
+  include ZOrdered
+
   ANIMATION = G::Image::load_tiles(Game.instance, "media/Star.png", 25, 25, false)
 
   def initialize
@@ -11,7 +13,9 @@ class Star < Element
     image.draw(
       @x - image.width / 2.0,
       @y - image.height / 2.0,
-      ZOrder::Stars, 1, 1,
+      Z_ORDER,
+      1,
+      1,
       @color,
       :add
     )

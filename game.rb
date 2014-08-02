@@ -36,6 +36,5 @@ class Game < Window
 
   def update_stars
     @stars.push(Star.new) if rand(100) < 4 && @stars.size < 25
-    puts "sz #{@stars.size}"
   end
 end
