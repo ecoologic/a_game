@@ -1,10 +1,7 @@
 class Space
-  def draw
-    image.draw(0, 0, ZOrder::Background)
-  end
+  IMAGE = G::Image.new(Game.instance, "media/Space.png", true)
 
-  private
-  def image
-    G::Image.new(Game.instance, "media/Space.png", true)
+  def draw
+    IMAGE.draw(0, 0, ZOrder::Background)
   end
 end
