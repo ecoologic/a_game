@@ -1,4 +1,4 @@
 A Game
 ======
 
-This is a spaceship game to try out Gosu
+This is a spaceship game in ruby to try out Gosu library.
