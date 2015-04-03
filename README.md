@@ -1,3 +1,8 @@
+* Working: Yes
+* Interesting: Yes
+* Progress: On Hold
+* Purpose: Experiment
+
 A Game
 ======
 
